@@ -4,6 +4,14 @@ class OrdersController < ApplicationController
 
   def create
   	@order = Order.new(price: order_params[:price])
+
+  	if @order.valid?
+     pay_item
+     @order.save
+     return redirect_to root_path
+    else
+     render 'index'
+    end
   end
 
   private
