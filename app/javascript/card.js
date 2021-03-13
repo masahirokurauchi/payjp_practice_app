@@ -1,7 +1,11 @@
 const pay = () => {
+  // 公開鍵をセット
   Payjp.setPublicKey("PAY.JP公開鍵");
   const form = document.getElementById("charge-form");
+
+  // charge-form内のsubmitが実行されるとイベントが発火
   form.addEventListener("submit", (e) => {
+    // Railsのフォーム送信処理をキャンセル。Railsのフォーム送信からサーバーサイドに値を送るのではなく、JavaScriptでサーバーサイドに値を送るため
     e.preventDefault();
 
     const formResult = document.getElementById("charge-form");
