@@ -1,6 +1,6 @@
 const pay = () => {
   // 公開鍵をセット
-  Payjp.setPublicKey("pk_test_9993b7a16e4609ddc21ad47f");
+  Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);
   const form = document.getElementById("charge-form");
 
   // charge-form内のsubmitが実行されるとイベントが発火
