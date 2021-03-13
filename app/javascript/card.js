@@ -26,6 +26,8 @@ const pay = () => {
 
         // トークンをパラメーターとして送るために、form内に隠し要素としてトークンの値が入っているHTMLを生成
         const tokenObj = `<input value=${token} type="hidden" name='token'>`;
+
+        // formの最後に挿入
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
 
         document.getElementById("number").removeAttribute("name");
