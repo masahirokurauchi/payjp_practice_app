@@ -11,6 +11,7 @@ const pay = () => {
     const formResult = document.getElementById("charge-form");
     const formData = new FormData(formResult);
 
+    // 入力された、カードの情報を変数に代入
     const card = {
       number: formData.get("number"),
       cvc: formData.get("cvc"),
@@ -22,6 +23,8 @@ const pay = () => {
       if (status === 200) {
         const token = response.id;
         const renderDom = document.getElementById("charge-form");
+
+        // トークンをパラメーターとして送るために、form内に隠し要素としてトークンの値が入っているHTMLを生成
         const tokenObj = `<input value=${token} type="hidden" name='token'>`;
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
 
