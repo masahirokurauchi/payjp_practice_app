@@ -36,6 +36,7 @@ const pay = () => {
         document.getElementById("exp_month").removeAttribute("name");
         document.getElementById("exp_year").removeAttribute("name");
 
+        // フォームに記載されている情報を、サーバーサイドへ送信
         document.getElementById("charge-form").submit();
         document.getElementById("charge-form").reset();
       } else {
