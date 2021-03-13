@@ -30,6 +30,7 @@ const pay = () => {
         // formの最後に挿入
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
 
+        // 入力された各カード情報をパラメーターとして送られないように、値を削除。セキュリティ対策
         document.getElementById("number").removeAttribute("name");
         document.getElementById("cvc").removeAttribute("name");
         document.getElementById("exp_month").removeAttribute("name");
