@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+  	@order = Order.new(price: order_params[:price])
   end
 
   private
